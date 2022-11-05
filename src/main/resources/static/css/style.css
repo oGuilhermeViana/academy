@@ -12,6 +12,10 @@ a {
   color: #fff;
 }
 
+a.btn-nav:hover {
+  color: #BA68C8;
+}
+
 .neo {
   height: 100vh;
   background-size: cover !important;
@@ -80,4 +84,11 @@ footer {
   background-color: #512da8;
   text-align: center;
   padding-block: 10px;
+}
+
+
+@media screen and (max-width: 667px) {
+  .wm {
+    width: 100%;
+  }
 }
