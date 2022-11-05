@@ -1,14 +1,15 @@
 package com.oguilhermeviana.academy.model;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import com.oguilhermeviana.academy.model.enums.Curso;
+import com.oguilhermeviana.academy.model.enums.Status;
 import com.oguilhermeviana.academy.model.enums.Turno;
-
-import ch.qos.logback.core.status.Status;
 
 @Entity
 public class Aluno {
@@ -17,9 +18,12 @@ public class Aluno {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Integer id;
   private String nome;
+  @Enumerated(EnumType.STRING)
   private Curso curso;
   private String matricula;
+  @Enumerated(EnumType.STRING)
   private Status status;
+  @Enumerated(EnumType.STRING)
   private Turno turno;
 
   public Aluno() {
