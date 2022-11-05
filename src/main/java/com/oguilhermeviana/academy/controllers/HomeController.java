@@ -1,4 +1,4 @@
-package com.oguilhermeviana.academy.academy.controllers;
+package com.oguilhermeviana.academy.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

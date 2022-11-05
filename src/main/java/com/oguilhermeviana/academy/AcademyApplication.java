@@ -1,4 +1,4 @@
-package com.oguilhermeviana.academy.academy;
+package com.oguilhermeviana.academy;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
