@@ -21,6 +21,14 @@
       <form action="/cadastro-aluno" th:object="${aluno}" method="post">
         <div class="row">
           <div class="col-md-6 form-group offset-md-3">
+            <div
+              class="alert alert-danger"
+              role="alert"
+              th:if="${#fields.hasErrors('nome')}"
+            >
+              <label class="validation-message" th:errors="*{nome}"></label>
+            </div>
+
             <label>Nome do aluno</label>
             <input
               type="text"
@@ -33,6 +41,14 @@
 
         <div class="row">
           <div class="col-md-6 form-group offset-md-3">
+            <div
+              class="alert alert-danger"
+              role="alert"
+              th:if="${#fields.hasErrors('curso')}"
+            >
+              <label class="validation-message" th:errors="*{curso}"></label>
+            </div>
+
             <label>Curso</label>
             <select class="form-control" th:field="*{curso}">
               <option
@@ -46,6 +62,14 @@
 
         <div class="row">
           <div class="col-md-6 form-group offset-md-3">
+            <div
+              class="alert alert-danger"
+              role="alert"
+              th:if="${#fields.hasErrors('turno')}"
+            >
+              <label class="validation-message" th:errors="*{turno}"></label>
+            </div>
+
             <label>Turno</label>
             <select class="form-control" th:field="*{turno}">
               <option
@@ -59,6 +83,14 @@
 
         <div class="row">
           <div class="col-md-6 form-group offset-md-3">
+            <div
+              class="alert alert-danger"
+              role="alert"
+              th:if="${#fields.hasErrors('status')}"
+            >
+              <label class="validation-message" th:errors="*{status}"></label>
+            </div>
+
             <label>Status</label>
             <select class="form-control" th:field="*{status}">
               <option
@@ -72,6 +104,17 @@
 
         <div class="row">
           <div class="col-md-6 form-group offset-md-3">
+            <div
+              class="alert alert-danger"
+              role="alert"
+              th:if="${#fields.hasErrors('matricula')}"
+            >
+              <label
+                class="validation-message"
+                th:errors="*{matricula}"
+              ></label>
+            </div>
+
             <label>Gerar Matricula</label>
             <input type="text" class="form-control" th:field="*{matricula}" />
             <button

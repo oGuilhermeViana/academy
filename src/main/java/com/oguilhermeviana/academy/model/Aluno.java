@@ -6,6 +6,9 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import com.oguilhermeviana.academy.model.enums.Curso;
 import com.oguilhermeviana.academy.model.enums.Status;
@@ -17,13 +20,24 @@ public class Aluno {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Integer id;
+
+  @Size(min = 3, max = 45, message = "Mínimo de 3 caracteres")
+  @NotBlank(message = "O campo nome não pode ser vazio.")
   private String nome;
+
   @Enumerated(EnumType.STRING)
+  @NotNull(message = "O campo curso não pode ser nulo.")
   private Curso curso;
+
+  @NotBlank(message = "O campo matricula não pode ser vazio. CLique em Gerar para gerar uma matricula.")
   private String matricula;
+
   @Enumerated(EnumType.STRING)
+  @NotNull(message = "O campo status não pode ser nulo.")
   private Status status;
+
   @Enumerated(EnumType.STRING)
+  @NotNull(message = "O campo turno não pode ser nulo.")
   private Turno turno;
 
   public Aluno() {

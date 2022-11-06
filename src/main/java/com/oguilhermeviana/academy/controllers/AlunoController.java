@@ -2,8 +2,11 @@ package com.oguilhermeviana.academy.controllers;
 
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,9 +29,15 @@ public class AlunoController {
   }
 
   @PostMapping("/cadastro-aluno")
-  public ModelAndView cadastrar(Aluno aluno) {
-    ModelAndView mv = new ModelAndView("redirect:/lista-aluno");
-    repo.save(aluno);
+  public ModelAndView cadastrar(@Valid Aluno aluno, BindingResult br) {
+    ModelAndView mv = new ModelAndView();
+    if (br.hasErrors()) {
+      mv.setViewName("aluno/cadastro");
+      mv.addObject("aluno");
+    } else {
+      mv.setViewName("redirect:/lista-aluno");
+      repo.save(aluno);
+    }
     return mv;
   }
 
