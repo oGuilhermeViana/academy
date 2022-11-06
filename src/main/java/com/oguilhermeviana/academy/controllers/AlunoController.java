@@ -24,8 +24,15 @@ public class AlunoController {
 
   @PostMapping("/cadastro-aluno")
   public ModelAndView cadastrar(Aluno aluno) {
-    ModelAndView mv = new ModelAndView("redirect:/aluno/lista");
+    ModelAndView mv = new ModelAndView("redirect:/lista-aluno");
     repo.save(aluno);
+    return mv;
+  }
+
+  @GetMapping("/lista-aluno")
+  public ModelAndView lista(Aluno aluno) {
+    ModelAndView mv = new ModelAndView("aluno/lista");
+    mv.addObject("lista", repo.findAll());
     return mv;
   }
 }
