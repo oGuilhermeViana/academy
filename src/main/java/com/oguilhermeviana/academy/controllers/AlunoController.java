@@ -1,5 +1,6 @@
 package com.oguilhermeviana.academy.controllers;
 
+import java.util.List;
 import java.util.Optional;
 
 import javax.validation.Valid;
@@ -10,6 +11,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.oguilhermeviana.academy.dao.AlunoDao;
@@ -93,6 +95,20 @@ public class AlunoController {
   public ModelAndView trancado(Aluno aluno) {
     ModelAndView mv = new ModelAndView("aluno/trancado");
     mv.addObject("trancado", repo.findByStatusTrancado());
+    return mv;
+  }
+
+  @PostMapping("/pesquisar-aluno")
+  public ModelAndView pesquisar(@RequestParam(required = false) String nome) {
+    ModelAndView mv = new ModelAndView("");
+    List<Aluno> alunos;
+    if (nome == null || nome.trim().isEmpty()) {
+      alunos = repo.findAll();
+    } else {
+      alunos = repo.findByNomeContainingIgnoreCase(nome);
+    }
+    mv.addObject("alunos", alunos);
+    mv.setViewName("aluno/resultado");
     return mv;
   }
 }
