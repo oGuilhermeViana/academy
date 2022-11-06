@@ -1,8 +1,11 @@
 package com.oguilhermeviana.academy.controllers;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -34,5 +37,26 @@ public class AlunoController {
     ModelAndView mv = new ModelAndView("aluno/lista");
     mv.addObject("lista", repo.findAll());
     return mv;
+  }
+
+  @GetMapping("/alterar/{id}")
+  public ModelAndView alterar(@PathVariable("id") Integer id) {
+    ModelAndView mv = new ModelAndView("aluno/alterar");
+    Optional<Aluno> aluno = repo.findById(id);
+    mv.addObject("aluno", aluno);
+    return mv;
+  }
+
+  @PostMapping("/alterar")
+  public ModelAndView alterar(Aluno aluno) {
+    ModelAndView mv = new ModelAndView("redirect:/lista-aluno");
+    repo.save(aluno);
+    return mv;
+  }
+
+  @GetMapping("/excluir/{id}")
+  public String excluir(@PathVariable Integer id) {
+    repo.deleteById(id);
+    return "redirect:/lista-aluno";
   }
 }
