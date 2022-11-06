@@ -68,4 +68,31 @@ public class AlunoController {
     repo.deleteById(id);
     return "redirect:/lista-aluno";
   }
+
+  @GetMapping("/filtro-aluno")
+  public ModelAndView filtro() {
+    ModelAndView mv = new ModelAndView("aluno/filtro");
+    return mv;
+  }
+
+  @GetMapping("/aluno-ativos")
+  public ModelAndView ativos(Aluno aluno) {
+    ModelAndView mv = new ModelAndView("aluno/ativos");
+    mv.addObject("ativos", repo.findByStatusAtivo());
+    return mv;
+  }
+
+  @GetMapping("/aluno-inativos")
+  public ModelAndView inativos(Aluno aluno) {
+    ModelAndView mv = new ModelAndView("aluno/inativos");
+    mv.addObject("inativos", repo.findByStatusInativo());
+    return mv;
+  }
+
+  @GetMapping("/aluno-trancados")
+  public ModelAndView trancado(Aluno aluno) {
+    ModelAndView mv = new ModelAndView("aluno/trancado");
+    mv.addObject("trancado", repo.findByStatusTrancado());
+    return mv;
+  }
 }
