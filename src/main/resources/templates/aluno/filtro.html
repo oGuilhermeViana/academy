@@ -18,11 +18,12 @@
       <hr />
       <br />
 
-      <form action="#" method="post">
+      <form action="/pesquisar-aluno" th:object="${aluno}" method="post">
         <div class="input-group col-6 offset-3">
           <input
             type="text"
             style="width: 288px"
+            th:field="*{nome}"
             class="form-control"
             placeholder="Busque pelo nome do aluno..."
           />

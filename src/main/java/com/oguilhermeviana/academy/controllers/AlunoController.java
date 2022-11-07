@@ -74,6 +74,7 @@ public class AlunoController {
   @GetMapping("/filtro-aluno")
   public ModelAndView filtro() {
     ModelAndView mv = new ModelAndView("aluno/filtro");
+    mv.addObject("aluno", new Aluno());
     return mv;
   }
 

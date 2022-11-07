@@ -21,12 +21,16 @@
 
         <div class="botoes">
           <div class="wm">
-            <h5 class="btn" type="button">CADASTRAR ALUNO</h5>
+            <a th:href="@{/cadastro-aluno}">
+              <h5 class="btn" type="button">CADASTRAR ALUNO</h5>
+            </a>
           </div>
           <div class="wm">
-            <h5 class="btn justify-content-center" type="button">
-              ENCONTRAR ALUNO
-            </h5>
+            <a th:href="@{/filtro-aluno}">
+              <h5 class="btn justify-content-center" type="button">
+                ENCONTRAR ALUNO
+              </h5>
+            </a>
           </div>
           <div class="clear"></div>
         </div>
