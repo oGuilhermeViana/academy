@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Guilherme Viana" />
+    <title>Cadastrar Usuario</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/login.css" />
+    <script src="https://kit.fontawesome.com/006642858d.js"></script>
+  </head>
+  <body>
+    <div class="login-form">
+      <div class="conteiner">
+        <div class="main-div">
+          <div class="texto-header">
+            <h2>cadastro de Usuário</h2>
+            <p>Crie seu usuário no sistema</p>
+          </div>
+          <form action="salvar-usuario" th:object="${usuario}" method="post">
+            <div class="form-group">
+              <input
+                type="text"
+                th:field="*{user}"
+                placeholder="Crie um usuário"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="password"
+                th:field="*{senha}"
+                placeholder="Crie uma senha"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="email"
+                th:field="*{email}"
+                placeholder="Digite seu email"
+                class="form-control"
+              />
+            </div>
+
+            <button class="btn btn-primary">Cadastrar</button>
+            <button type="button" class="btn btn-info">Voltar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

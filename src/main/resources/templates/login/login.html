@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Guilherme Viana" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/login.css" />
+    <script src="https://kit.fontawesome.com/006642858d.js"></script>
+  </head>
+  <body>
+    <div class="login-form">
+      <div class="conteiner">
+        <div class="main-div">
+          <div class="texto-header">
+            <h2>Admin Login</h2>
+            <p>Insira suas credênciais para efetuar login no sistema</p>
+          </div>
+          <form action="" method="post">
+            <div class="form-group">
+              <input
+                type="text"
+                placeholder="Insira seu usuário"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="password"
+                placeholder="Insira sua senha"
+                class="form-control"
+              />
+            </div>
+
+            <div class="cadastro">
+              <a th:href="@{/cadastro}">Não tem cadastro? Clique aqui.</a>
+            </div>
+
+            <button class="btn btn-primary">Login</button>
+            <button type="button" class="btn btn-info">Voltar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

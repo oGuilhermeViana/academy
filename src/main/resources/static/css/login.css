@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+}
+
+.login-form {
+  min-height: 100vh;
+}
+
+.login-form {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.main-div {
+  border: 2px solid #000;
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 50px 70px;
+}
+
+.form-control {
+  background-color: #f7f7f7;
+  border-radius: 7px;
+  font-size: 15px;
+  height: 50px;
+  line-height: 50px;
+  border: 2px solid #777777;
+}
+
+.form-group {
+  margin: 10px;
+}
+
+.btn.btn-primary {
+  background: #512DA8;
+  border-color: #d4d4d4;
+  font-size: 1.1em;
+  padding: 0;
+  height: 50px;
+  width: 40%;
+}
+
+.btn-primary:hover {
+  color: #7e57c2;
+}
+.btn.btn-info {
+  background: #7e57c2;
+  border-color: #d4d4d4;
+  font-size: 1.1em;
+  padding: 0;
+  height: 50px;
+  width: 40%;
+}
+.btn.btn-info:hover {
+  color: #512DA8;
+}

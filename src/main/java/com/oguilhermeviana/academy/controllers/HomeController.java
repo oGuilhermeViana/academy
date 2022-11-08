@@ -9,7 +9,7 @@ import com.oguilhermeviana.academy.model.Aluno;
 @Controller
 public class HomeController {
 
-  @GetMapping("/")
+  @GetMapping("/index")
   public ModelAndView home() {
     ModelAndView mv = new ModelAndView("home/index");
     mv.addObject("aluno", new Aluno());
