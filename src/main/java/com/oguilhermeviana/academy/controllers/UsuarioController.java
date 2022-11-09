@@ -6,14 +6,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.oguilhermeviana.academy.dao.UsuarioDao;
+// import com.oguilhermeviana.academy.dao.UsuarioDao;
 import com.oguilhermeviana.academy.model.Usuario;
+import com.oguilhermeviana.academy.services.ServiceUsuario;
 
 @Controller
 public class UsuarioController {
 
+  // @Autowired
+  // private UsuarioDao repo;
+
   @Autowired
-  private UsuarioDao repo;
+  private ServiceUsuario service;
 
   @GetMapping("/")
   public ModelAndView login() {
@@ -29,9 +33,9 @@ public class UsuarioController {
   }
 
   @PostMapping("/salvar-usuario")
-  public ModelAndView cadastro(Usuario usuario) {
+  public ModelAndView cadastro(Usuario usuario) throws Exception {
     ModelAndView mv = new ModelAndView("redirect:/");
-    repo.save(usuario);
+    service.salvarUsuario(usuario);
     return mv;
   }
 }
