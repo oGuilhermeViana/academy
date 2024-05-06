@@ -26,6 +26,7 @@
                 placeholder="Crie um usuário"
                 class="form-control"
               />
+              <span th:if="${#fields.hasErrors('user')}" th:errors="*{user}" class="error-message"></span>
             </div>
             <div class="form-group">
               <input
@@ -34,6 +35,7 @@
                 placeholder="Crie uma senha"
                 class="form-control"
               />
+              <span th:if="${#fields.hasErrors('senha')}" th:errors="*{senha}" class="error-message"></span>
             </div>
             <div class="form-group">
               <input
@@ -42,6 +44,7 @@
                 placeholder="Digite seu email"
                 class="form-control"
               />
+              <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="error-message"></span>
             </div>
 
             <button class="btn btn-primary">Cadastrar</button>

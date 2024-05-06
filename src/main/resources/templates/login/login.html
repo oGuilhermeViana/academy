@@ -29,6 +29,7 @@
                 placeholder="Insira seu usuário"
                 class="form-control"
               />
+              <span th:if="${#fields.hasErrors('user')}" th:errors="*{user}" class="error-message"></span>
             </div>
             <div class="form-group">
               <input
@@ -37,6 +38,7 @@
                 placeholder="Insira sua senha"
                 class="form-control"
               />
+              <span th:if="${#fields.hasErrors('senha')}" th:errors="*{senha}" class="error-message"></span>
             </div>
 
             <div class="cadastro">

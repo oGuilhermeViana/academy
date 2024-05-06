@@ -58,3 +58,10 @@
 .btn.btn-info:hover {
   color: #512DA8;
 }
+
+/* Estilo para mensagens de erro */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
